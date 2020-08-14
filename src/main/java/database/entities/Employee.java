@@ -1,12 +1,14 @@
-package database.models;
+package database.entities;
 
+import net.bytebuddy.build.HashCodeAndEqualsPlugin;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "employees")
-public class Employee {
+@HashCodeAndEqualsPlugin.Enhance(invokeSuper = HashCodeAndEqualsPlugin.Enhance.InvokeSuper.ALWAYS)
+public class Employee extends BaseEntity {
     @Id
     @Column(name = "id")
     @GeneratedValue(generator = "incrementor")

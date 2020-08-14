@@ -1,4 +1,4 @@
-package database.models;
+package database.entities;
 
 import database.enums.GenderENUM;
 import org.hibernate.annotations.GenericGenerator;

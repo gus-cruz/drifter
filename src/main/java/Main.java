@@ -1,4 +1,4 @@
-import database.models.Vehicle;
+import database.entities.Vehicle;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;

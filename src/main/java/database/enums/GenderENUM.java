@@ -1,9 +1,13 @@
 package database.enums;
 
-public class GenderENUM {
-    enum Options {
-        F,
-        M,
-        N
+public enum GenderENUM {
+    FEMALE("F"),
+    MALE("M"),
+    NONE("N");
+
+    private String option;
+
+    GenderENUM(String option) {
+        this.option = option;
     }
 }
