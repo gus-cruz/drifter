@@ -1,6 +1,7 @@
 package database.entities;
 
 import database.enums.StatusENUM;
+import net.bytebuddy.build.HashCodeAndEqualsPlugin;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -8,20 +9,8 @@ import java.util.Date;
 
 @Entity
 @Table(name = "lease_agreements")
-public class LeaseAgreement {
-    @Id
-    @Column(name = "id")
-    @GeneratedValue(generator = "incrementor")
-    @GenericGenerator(name ="incrementor", strategy = "increment")
-    private int id;
-
-    public int getId() { return id; }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-
+@HashCodeAndEqualsPlugin.Enhance(invokeSuper = HashCodeAndEqualsPlugin.Enhance.InvokeSuper.ALWAYS)
+public class LeaseAgreement extends BaseEntity {
     @Temporal(TemporalType.DATE)
     @Column(name = "departure_date")
     private Date departure_date;
@@ -73,8 +62,8 @@ public class LeaseAgreement {
     public void setPenalty(double penalty) { this.penalty = penalty; }
 
 
-    @Enumerated
-    @Column(name = "status")
+    @Column(name = "status", columnDefinition = "enum('ACTIVATED', 'PENDING', 'HOLDING', 'CANCELED')")
+    @Enumerated(EnumType.STRING)
     private StatusENUM status = StatusENUM.ACTIVATED;
 
     public StatusENUM getStatus() { return status; }

@@ -9,21 +9,6 @@ import javax.persistence.*;
 @Table(name = "employees")
 @HashCodeAndEqualsPlugin.Enhance(invokeSuper = HashCodeAndEqualsPlugin.Enhance.InvokeSuper.ALWAYS)
 public class Employee extends BaseEntity {
-    @Id
-    @Column(name = "id")
-    @GeneratedValue(generator = "incrementor")
-    @GenericGenerator(name ="incrementor", strategy = "increment")
-    private int id;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-
     @Column(name = "salary")
     private double salary;
 

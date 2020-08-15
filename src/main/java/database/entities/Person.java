@@ -1,6 +1,7 @@
 package database.entities;
 
 import database.enums.GenderENUM;
+import net.bytebuddy.build.HashCodeAndEqualsPlugin;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -8,21 +9,20 @@ import java.util.Date;
 
 @Entity
 @Table(name = "people")
-public class Person {
-    @Id
-    @Column(name = "id")
-    @GeneratedValue(generator = "incrementor")
-    @GenericGenerator(name ="incrementor", strategy = "increment")
-    private int id;
+@HashCodeAndEqualsPlugin.Enhance(invokeSuper = HashCodeAndEqualsPlugin.Enhance.InvokeSuper.ALWAYS)
+public class Person extends BaseEntity {
+    public Person(){}
 
-    public int getId() {
-        return id;
+    public Person(String name, Date birthday, String cpf, String rg, GenderENUM gender, String telephone, String cellphone, String email) {
+        this.name = name;
+        this.birthday = birthday;
+        this.cpf = cpf;
+        this.rg = rg;
+        this.gender = gender;
+        this.telephone = telephone;
+        this.cellphone = cellphone;
+        this.email = email;
     }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
 
     @Column(name = "name", length = 100)
     private String name;
@@ -57,8 +57,9 @@ public class Person {
     public void setRg(String rg) { this.rg = rg; }
 
 
-    @Enumerated
-    @Column(name = "gender")
+
+    @Column(name = "gender", columnDefinition = "enum('MALE', 'FEMALE', 'NONBINARY')")
+    @Enumerated(EnumType.STRING)
     private GenderENUM gender;
 
     public GenderENUM getGender() { return gender; }

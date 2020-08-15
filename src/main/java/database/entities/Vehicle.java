@@ -1,12 +1,14 @@
 package database.entities;
 
+import net.bytebuddy.build.HashCodeAndEqualsPlugin;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "vehicles")
-public class Vehicle {
+@HashCodeAndEqualsPlugin.Enhance(invokeSuper = HashCodeAndEqualsPlugin.Enhance.InvokeSuper.ALWAYS)
+public class Vehicle extends BaseEntity {
     public Vehicle() {}
 
     public Vehicle(String brand, String model, String color, String license_plate, String chassis, int year_fabrication, int year_model, double power, int number_passengers, String vehicle_type, double trunk_capacity, String fuel_type, int mileage, double daily_value) {
@@ -25,21 +27,6 @@ public class Vehicle {
         this.mileage = mileage;
         this.daily_value = daily_value;
     }
-
-    @Id
-    @Column(name = "id")
-    @GeneratedValue(generator = "incrementor")
-    @GenericGenerator(name ="incrementor", strategy = "increment")
-    private int id;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
 
     @Column(name = "brand", length = 30)
     private String brand;

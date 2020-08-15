@@ -1,31 +1,19 @@
 package database.entities;
 
+import net.bytebuddy.build.HashCodeAndEqualsPlugin;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "roles")
-public class Role {
+@HashCodeAndEqualsPlugin.Enhance(invokeSuper = HashCodeAndEqualsPlugin.Enhance.InvokeSuper.ALWAYS)
+public class Role extends BaseEntity {
     public Role() {}
 
     public Role(String role, double baseSalary) {
         this.role = role;
         this.base_salary = baseSalary;
-    }
-
-    @Id
-    @Column(name = "id")
-    @GeneratedValue(generator = "incrementor")
-    @GenericGenerator(name ="incrementor", strategy = "increment")
-    private int id;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
 

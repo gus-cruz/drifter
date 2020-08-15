@@ -11,19 +11,6 @@ import javax.persistence.*;
 @Table(name = "customers")
 @HashCodeAndEqualsPlugin.Enhance(invokeSuper = HashCodeAndEqualsPlugin.Enhance.InvokeSuper.ALWAYS)
 public class Customer extends BaseEntity {
-    @Id
-    @Column(name = "id")
-    @GeneratedValue(generator = "incrementor")
-    @GenericGenerator(name ="incrementor", strategy = "increment")
-    private int id;
-
-    public int getId() { return id; }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-
     @Column(name = "profession", length = 50)
     private String profession;
 
