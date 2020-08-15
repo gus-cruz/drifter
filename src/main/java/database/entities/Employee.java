@@ -39,7 +39,7 @@ public class Employee extends BaseEntity {
 
     public void setCommissionFee(double commissionFee) { this.commission_fee = commissionFee; }
 
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY.EAGER)
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "role_id")
     private Role role_id;
 
@@ -48,7 +48,7 @@ public class Employee extends BaseEntity {
     public void setRole_id(Role role_id) { this.role_id = role_id; }
 
 
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY.EAGER)
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "person_id")
     private Person person_id;
 

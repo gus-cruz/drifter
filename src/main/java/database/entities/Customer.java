@@ -58,7 +58,7 @@ public class Customer extends BaseEntity {
         this.license_expiration_date = licenseExpirationDate;
     }
 
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY.EAGER)
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "person_id")
     private Person person_id;
 
