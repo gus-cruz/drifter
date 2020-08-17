@@ -24,7 +24,7 @@ public class Person extends BaseEntity {
         this.email = email;
     }
 
-    @Column(name = "name", length = 100)
+    @Column(name = "name", length = 100, nullable = false)
     private String name;
 
     public String getName() { return name; }
@@ -41,7 +41,7 @@ public class Person extends BaseEntity {
     public void setBirthday(Date birthday) { this.birthday = birthday; }
 
 
-    @Column(name = "cpf", length = 11)
+    @Column(name = "cpf", length = 11, nullable = false)
     private String cpf;
 
     public String getCpf() { return cpf; }
@@ -58,7 +58,7 @@ public class Person extends BaseEntity {
 
 
 
-    @Column(name = "gender", columnDefinition = "enum('MALE', 'FEMALE', 'NONBINARY')")
+    @Column(name = "gender", columnDefinition = "enum('MALE', 'FEMALE', 'NONBINARY')", nullable = false)
     @Enumerated(EnumType.STRING)
     private GenderENUM gender;
 

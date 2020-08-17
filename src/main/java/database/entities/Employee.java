@@ -1,7 +1,6 @@
 package database.entities;
 
 import net.bytebuddy.build.HashCodeAndEqualsPlugin;
-import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 
@@ -9,7 +8,7 @@ import javax.persistence.*;
 @Table(name = "employees")
 @HashCodeAndEqualsPlugin.Enhance(invokeSuper = HashCodeAndEqualsPlugin.Enhance.InvokeSuper.ALWAYS)
 public class Employee extends BaseEntity {
-    @Column(name = "salary")
+    @Column(name = "salary", nullable = false)
     private double salary;
 
     public double getSalary() { return salary; }
@@ -24,8 +23,8 @@ public class Employee extends BaseEntity {
 
     public void setCommissionFee(double commissionFee) { this.commission_fee = commissionFee; }
 
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "role_id")
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "role_id", nullable = false)
     private Role role_id;
 
     public Role getRole_id() { return role_id; }
@@ -34,7 +33,7 @@ public class Employee extends BaseEntity {
 
 
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "person_id")
+    @JoinColumn(name = "person_id", nullable = false)
     private Person person_id;
 
     public Person getPersonId() { return person_id; }

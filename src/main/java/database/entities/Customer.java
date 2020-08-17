@@ -19,7 +19,7 @@ public class Customer extends BaseEntity {
     public void setProfession(String profession) { this.profession = profession; }
 
 
-    @Column(name = "income")
+    @Column(name = "income", nullable = false)
     private double income;
 
     public double getIncome() { return income; }
@@ -27,7 +27,7 @@ public class Customer extends BaseEntity {
     public void setIncome(double income) { this.income = income; }
 
 
-    @Column(name = "license", length = 11)
+    @Column(name = "license", length = 11, nullable = false)
     private String license;
 
     public String getLicense() { return license; }
@@ -36,7 +36,7 @@ public class Customer extends BaseEntity {
 
 
     @Temporal(TemporalType.DATE)
-    @Column(name = "license_expiration_date")
+    @Column(name = "license_expiration_date", nullable = false)
     private Date license_expiration_date;
 
     public Date getLicenseExpirationDate() { return license_expiration_date; }
@@ -46,7 +46,7 @@ public class Customer extends BaseEntity {
     }
 
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "person_id")
+    @JoinColumn(name = "person_id", nullable = false)
     private Person person_id;
 
     public Person getPersonId() { return person_id; }

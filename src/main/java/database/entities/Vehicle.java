@@ -28,7 +28,7 @@ public class Vehicle extends BaseEntity {
         this.daily_value = daily_value;
     }
 
-    @Column(name = "brand", length = 30)
+    @Column(name = "brand", length = 30, nullable = false)
     private String brand;
 
     public String getBrand() {
@@ -40,7 +40,7 @@ public class Vehicle extends BaseEntity {
     }
 
 
-    @Column(name = "model", length = 50)
+    @Column(name = "model", length = 50, nullable = false)
     private String model;
 
     public String getModel() {
@@ -52,7 +52,7 @@ public class Vehicle extends BaseEntity {
     }
 
 
-    @Column(name = "color", length = 20)
+    @Column(name = "color", length = 20, nullable = false)
     private String color;
 
     public String getColor() {
@@ -64,7 +64,7 @@ public class Vehicle extends BaseEntity {
     }
 
 
-    @Column(name = "license_plate", length = 7)
+    @Column(name = "license_plate", length = 7, nullable = false)
     private String license_plate;
 
     public String getLicensePlate() {
@@ -76,7 +76,7 @@ public class Vehicle extends BaseEntity {
     }
 
 
-    @Column(name = "chassis", length = 17)
+    @Column(name = "chassis", length = 17, nullable = false)
     private String chassis;
 
     public String getChassis() {
@@ -184,7 +184,7 @@ public class Vehicle extends BaseEntity {
     }
 
 
-    @Column(name = "daily_value")
+    @Column(name = "daily_value", nullable = false)
     private double daily_value;
 
     public double getDailyValue() {

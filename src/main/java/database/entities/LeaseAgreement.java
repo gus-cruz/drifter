@@ -12,7 +12,7 @@ import java.util.Date;
 @HashCodeAndEqualsPlugin.Enhance(invokeSuper = HashCodeAndEqualsPlugin.Enhance.InvokeSuper.ALWAYS)
 public class LeaseAgreement extends BaseEntity {
     @Temporal(TemporalType.DATE)
-    @Column(name = "departure_date")
+    @Column(name = "departure_date", nullable = false)
     private Date departure_date;
 
     public Date getDepartureDate() { return departure_date; }
@@ -38,7 +38,7 @@ public class LeaseAgreement extends BaseEntity {
     public void setReturnDate(Date returnDate) { this.return_date = returnDate; }
 
 
-    @Column(name = "departure_mileage")
+    @Column(name = "departure_mileage", nullable = false)
     private int departure_mileage;
 
     public int getDepartureMileage() { return departure_mileage; }
@@ -46,12 +46,20 @@ public class LeaseAgreement extends BaseEntity {
     public void setDepartureMileage(int departureMileage) { this.departure_mileage = departureMileage; }
 
 
-    @Column(name = "lease_price")
-    private double lease_price;
+    @Column(name = "return_mileage")
+    private int return_mileage;
 
-    public double getLeasePrice() { return lease_price; }
+    public int getReturnMileage() { return return_mileage; }
 
-    public void setLeasePrice(double leasePrice) { this.lease_price = leasePrice; }
+    public void setReturnMileage(int returnMileage) { this.return_mileage = returnMileage; }
+
+
+    @Column(name = "price", nullable = false)
+    private double price;
+
+    public double getPrice() { return price; }
+
+    public void setPrice(double price) { this.price = price; }
 
 
     @Column(name = "penalty")
@@ -62,7 +70,7 @@ public class LeaseAgreement extends BaseEntity {
     public void setPenalty(double penalty) { this.penalty = penalty; }
 
 
-    @Column(name = "status", columnDefinition = "enum('ACTIVATED', 'PENDING', 'HOLDING', 'CANCELED')")
+    @Column(name = "status", columnDefinition = "enum('ACTIVATED', 'PENDING', 'HOLDING', 'CANCELED')", nullable = false)
     @Enumerated(EnumType.STRING)
     private StatusENUM status = StatusENUM.ACTIVATED;
 
