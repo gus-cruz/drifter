@@ -8,6 +8,15 @@ import javax.persistence.*;
 @Table(name = "employees")
 @HashCodeAndEqualsPlugin.Enhance(invokeSuper = HashCodeAndEqualsPlugin.Enhance.InvokeSuper.ALWAYS)
 public class Employee extends BaseEntity {
+    public Employee() {}
+
+    public Employee(double salary, double commission_fee, Role role_id, Person person_id) {
+        this.salary = salary;
+        this.commission_fee = commission_fee;
+        this.role_id = role_id;
+        this.person_id = person_id;
+    }
+
     @Column(name = "salary", nullable = false)
     private double salary;
 

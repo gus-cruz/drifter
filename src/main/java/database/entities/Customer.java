@@ -1,7 +1,6 @@
 package database.entities;
 
 import net.bytebuddy.build.HashCodeAndEqualsPlugin;
-import org.hibernate.annotations.GenericGenerator;
 
 import java.util.Date;
 
@@ -11,6 +10,16 @@ import javax.persistence.*;
 @Table(name = "customers")
 @HashCodeAndEqualsPlugin.Enhance(invokeSuper = HashCodeAndEqualsPlugin.Enhance.InvokeSuper.ALWAYS)
 public class Customer extends BaseEntity {
+    public Customer() {}
+
+    public Customer(String profession, double income, String license, Date license_expiration_date, Person person_id) {
+        this.profession = profession;
+        this.income = income;
+        this.license = license;
+        this.license_expiration_date = license_expiration_date;
+        this.person_id = person_id;
+    }
+
     @Column(name = "profession", length = 50)
     private String profession;
 

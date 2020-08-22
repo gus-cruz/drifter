@@ -2,7 +2,6 @@ package database.entities;
 
 import database.enums.StatusENUM;
 import net.bytebuddy.build.HashCodeAndEqualsPlugin;
-import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -11,6 +10,19 @@ import java.util.Date;
 @Table(name = "lease_agreements")
 @HashCodeAndEqualsPlugin.Enhance(invokeSuper = HashCodeAndEqualsPlugin.Enhance.InvokeSuper.ALWAYS)
 public class LeaseAgreement extends BaseEntity {
+    public LeaseAgreement() {}
+
+    public LeaseAgreement(Date departure_date, Date expected_return_date, Date return_date, int departure_mileage, int return_mileage, double price, double penalty, StatusENUM status) {
+        this.departure_date = departure_date;
+        this.expected_return_date = expected_return_date;
+        this.return_date = return_date;
+        this.departure_mileage = departure_mileage;
+        this.return_mileage = return_mileage;
+        this.price = price;
+        this.penalty = penalty;
+        this.status = status;
+    }
+
     @Temporal(TemporalType.DATE)
     @Column(name = "departure_date", nullable = false)
     private Date departure_date;

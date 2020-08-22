@@ -1,7 +1,6 @@
 package database.entities;
 
 import net.bytebuddy.build.HashCodeAndEqualsPlugin;
-import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 

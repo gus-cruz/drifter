@@ -1,7 +1,6 @@
 package database.entities;
 
 import net.bytebuddy.build.HashCodeAndEqualsPlugin;
-import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 
@@ -11,7 +10,7 @@ import javax.persistence.*;
 public class Vehicle extends BaseEntity {
     public Vehicle() {}
 
-    public Vehicle(String brand, String model, String color, String license_plate, String chassis, int year_fabrication, int year_model, double power, int number_passengers, String vehicle_type, double trunk_capacity, String fuel_type, int mileage, double daily_value) {
+    public Vehicle(String brand, String model, String color, String license_plate, String chassis, int year_fabrication, int year_model, double power, int passengers_number, String vehicle_type, double trunk_capacity, String fuel_type, int mileage, double daily_value) {
         this.brand = brand;
         this.model = model;
         this.color = color;
@@ -20,7 +19,7 @@ public class Vehicle extends BaseEntity {
         this.year_fabrication = year_fabrication;
         this.year_model = year_model;
         this.power = power;
-        this.number_passengers = number_passengers;
+        this.passengers_number = passengers_number;
         this.vehicle_type = vehicle_type;
         this.trunk_capacity = trunk_capacity;
         this.fuel_type = fuel_type;
@@ -124,15 +123,15 @@ public class Vehicle extends BaseEntity {
     }
 
 
-    @Column(name = "number_passengers")
-    private int number_passengers;
+    @Column(name = "passengers_number")
+    private int passengers_number;
 
-    public int getNumberPassengers() {
-        return number_passengers;
+    public int getPassengersNumber() {
+        return passengers_number;
     }
 
-    public void setNumberPassengers(int numberPassengers) {
-        this.number_passengers = numberPassengers;
+    public void setPassengersNumber(int passengersNumber) {
+        this.passengers_number = passengersNumber;
     }
 
 
