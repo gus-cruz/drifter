@@ -3,6 +3,8 @@ package database.entities;
 import net.bytebuddy.build.HashCodeAndEqualsPlugin;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "employees")
@@ -32,13 +34,13 @@ public class Employee extends BaseEntity {
 
     public void setCommissionFee(double commissionFee) { this.commission_fee = commissionFee; }
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "role_id", nullable = false)
     private Role role_id;
 
-    public Role getRole_id() { return role_id; }
+    public Role getRoleId() { return role_id; }
 
-    public void setRole_id(Role role_id) { this.role_id = role_id; }
+    public void setRoleId(Role roleId) { this.role_id = roleId; }
 
 
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)

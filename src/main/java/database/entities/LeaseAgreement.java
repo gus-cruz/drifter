@@ -5,6 +5,8 @@ import net.bytebuddy.build.HashCodeAndEqualsPlugin;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "lease_agreements")
@@ -89,4 +91,31 @@ public class LeaseAgreement extends BaseEntity {
     public StatusENUM getStatus() { return status; }
 
     public void setStatus(StatusENUM status) { this.status = status; }
+
+
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "vehicle_id", nullable = false)
+    private Vehicle vehicles_id;
+
+    public Vehicle getVehicleId() { return vehicles_id; }
+
+    public void setVehicles(Vehicle vehicleId) { this.vehicles_id = vehicleId; }
+
+
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "customer_id", nullable = false)
+    private Customer customer_id;
+
+    public Customer getCustomerId() { return customer_id; }
+
+    public void setCustomers(Customer customerId) { this.customer_id = customerId; }
+
+
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "employee_id", nullable = false)
+    private Employee employee_id;
+
+    public Employee getEmployeeId() { return employee_id; }
+
+    public void setEmployeeId(Employee employeeId) { this.employee_id = employeeId; }
 }
