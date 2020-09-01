@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="615.0" prefWidth="788.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane layoutX="385.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="615.0" prefWidth="409.0" style="-fx-background-color: #333333;" stylesheets="@style.css">
+         <children>
+            <TextField layoutX="97.0" layoutY="241.0" prefHeight="45.0" prefWidth="242.0" promptText="USUÁRIO" style="-fx-background-color: transparent; -fx-border-color: #6f42f5; -fx-border-width: 0px 0px 2px 0px;" />
+            <PasswordField layoutX="98.0" layoutY="320.0" prefHeight="45.0" prefWidth="242.0" promptText="SENHA" style="-fx-background-color: transparent; -fx-border-color: #6f42f5; -fx-border-width: 0px 0px 2px 0px;" />
+            <Button layoutX="62.0" layoutY="410.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="279.0" style="-fx-background-color: #6f42f5; -fx-font-weight: 800;" text="ENTRAR" textFill="#f8f8f8" />
+            <Label layoutX="123.0" layoutY="160.0" style="-fx-font-size: 30;" text="Fazer logon" textFill="#f8f8f8">
+               <font>
+                  <Font name="System Bold" size="50.0" />
+               </font>
+            </Label>
+            <FontAwesomeIcon fill="#6f42f5" iconName="USER" layoutX="65.0" layoutY="280.0" size="25" />
+            <FontAwesomeIcon fill="#6f42f5" iconName="KEY" layoutX="62.0" layoutY="357.0" size="25" />
+            <Hyperlink layoutX="133.0" layoutY="557.0" text="Esqueci minha senha" />
+            <FontAwesomeIcon fill="#6f42f5" iconName="USERS" layoutX="172.0" layoutY="137.0" size="55" />
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="615.0" prefWidth="387.0" style="-fx-background-color: #6f42f5;">
+         <children>
+            <Label layoutX="213.0" layoutY="566.0" style="-fx-font-family: Avenger Title;" text="kairos" textFill="#b2b2b2" />
+            <Label layoutX="104.0" layoutY="564.0" text="Desenvolvido por" textFill="#b2b2b2" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
