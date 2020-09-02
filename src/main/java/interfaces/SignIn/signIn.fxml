@@ -1,25 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Hyperlink?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.PasswordField?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.effect.Glow?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
-
-<AnchorPane prefHeight="615.0" prefWidth="788.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="615.0" prefWidth="915.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <AnchorPane prefHeight="615.0" prefWidth="387.0" style="-fx-background-color: #6f42f5;">
+      <AnchorPane prefHeight="615.0" prefWidth="506.0" style="-fx-background-color: #6f42f5;">
          <children>
-            <Label layoutX="214.0" layoutY="567.0" style="-fx-font-family: Avenger Title;" text="kairos" textFill="#b2b2b2" />
-            <Label layoutX="115.0" layoutY="564.0" text="Desenvolvido por" textFill="#b2b2b2" />
-            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="94.0" layoutY="265.0" pickOnBounds="true" preserveRatio="true">
+            <Label layoutX="274.0" layoutY="565.0" style="-fx-font-family: Avenger Title;" text="kairos" textFill="#b2b2b2" />
+            <Label layoutX="175.0" layoutY="562.0" text="Desenvolvido por" textFill="#b2b2b2" />
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="154.0" layoutY="265.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../assets/images/logo.png" />
                </image>
@@ -29,7 +23,7 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="385.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="615.0" prefWidth="409.0" style="-fx-background-color: #333333;" stylesheets="@style.css">
+      <AnchorPane layoutX="506.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="615.0" prefWidth="409.0" style="-fx-background-color: #333333;" stylesheets="@style.css">
          <children>
             <TextField layoutX="97.0" layoutY="241.0" prefHeight="45.0" prefWidth="242.0" promptText="USUÁRIO" style="-fx-background-color: transparent; -fx-border-color: #6f42f5; -fx-border-width: 0px 0px 2px 0px;" />
             <PasswordField layoutX="98.0" layoutY="320.0" prefHeight="45.0" prefWidth="242.0" promptText="SENHA" style="-fx-background-color: transparent; -fx-border-color: #6f42f5; -fx-border-width: 0px 0px 2px 0px;" />
@@ -43,6 +37,8 @@
             <FontAwesomeIcon fill="#6f42f5" iconName="KEY" layoutX="62.0" layoutY="357.0" size="25" />
             <Hyperlink layoutX="145.0" layoutY="556.0" text="Esqueci minha senha" />
             <FontAwesomeIcon fill="#6f42f5" iconName="USERS" layoutX="172.0" layoutY="137.0" size="55" />
+            <FontAwesomeIcon fill="#b2b2b2" iconName="CLOSE" layoutX="387.0" layoutY="21.0" selectionFill="#b2b2b2" size="20" />
+            <FontAwesomeIcon fill="#b2b2b2" iconName="MINUS" layoutX="360.0" layoutY="21.0" selectionFill="#b2b2b2" size="20" />
          </children>
       </AnchorPane>
    </children>

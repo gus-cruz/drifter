@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="615.0" prefWidth="915.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="32.0" prefWidth="915.0" style="-fx-background-color: #222222;" stylesheets="@style.css">
+         <children>
+            <ImageView fitHeight="25.0" fitWidth="93.0" layoutX="7.0" layoutY="3.0" opacity="0.58" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../assets/images/logo.png" />
+               </image>
+               <effect>
+                  <Glow level="0.4" />
+               </effect>
+            </ImageView>
+            <FontAwesomeIcon fill="#b2b2b2" iconName="CLOSE" layoutX="892.0" layoutY="22.0" size="20" />
+            <FontAwesomeIcon fill="#b2b2b2" iconName="MINUS" layoutX="865.0" layoutY="22.0" size="20" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="65.0" layoutY="32.0" prefHeight="583.0" prefWidth="850.0" style="-fx-background-color: #333333; -fx-border-radius: 30px;" />
+      <AnchorPane layoutX="-1.0" layoutY="32.0" prefHeight="583.0" prefWidth="73.0" style="-fx-background-color: #222222;">
+         <children>
+            <FontAwesomeIcon fill="#6f42f5" iconName="FILE_ALT" layoutX="25.0" layoutY="215.0" size="28" />
+            <FontAwesomeIcon fill="#6f42f5" iconName="CAR" layoutX="21.0" layoutY="136.0" size="28" />
+            <FontAwesomeIcon fill="#6f42f5" iconName="LIST" layoutX="24.0" layoutY="557.0" size="28" />
+            <FontAwesomeIcon fill="#6f42f5" iconName="USER" layoutX="27.0" layoutY="59.0" size="28" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
